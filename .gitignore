@@ -1,0 +1,5 @@
+# folders not to track
+.venv
+logs/
+exports/
+configs/

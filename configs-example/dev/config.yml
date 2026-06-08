@@ -1,0 +1,53 @@
+# Example configuration file for multiple Tableau Server environments
+
+# Common settings
+objects:
+  - "workbooks"
+  - "flows"
+  - "datasources"
+
+# Tableau Server environments
+tableau_servers:
+  server1:
+    tableau_server_info:
+      tableau_server: "<tableau-server-url>"
+      sites: "<tableau-sites-list>"
+      api_version: "<api-version>"
+      token_name: "<token-name>"
+      token_secret: "<token-secret>"
+    
+    database_connections:
+      snowflake:
+        # access credentials: used for connecting and rotating password for the user
+        db_account: "<account>"
+        db_access_username: "<access-user-sso>"
+        # credentials for tableau objects
+        db_server_name: "<server-name>"
+        db_username: "<user>"
+        db_pat_name: "<db-pat-name>"
+        db_password: "<password>"
+      
+      databricks:
+        # access credentials: used for connecting and rotating password for the user
+        workspace_url: "<workspace-url>"
+        tenant_id: "<tenant-id>"
+        client_id: "<client-id>"
+        client_secret: "<client-secret>"
+        # credentials for tableau objects
+        db_server_name: "<server-name>"
+        db_username: "<user>"
+        db_password: "<password>"
+
+  server2:
+    tableau_server_info:
+      tableau_server: "<tableau-server-url>"
+      sites: "<tableau-sites-list>"
+      api_version: "<api-version>"
+      token_name: "<token-name>"
+      token_secret: "<token-secret>"
+    
+    database_connections:
+      supabase:
+        db_server_name: "<server-name>"
+        db_username: "<user>"
+        db_password: "<password>"

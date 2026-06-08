@@ -1,0 +1,17 @@
+[project]
+name = "tab-sync"
+version = "0.3.0"
+description = "Tool used to automatically rotate all necessary database passwords and update all embedded database credentials on Tableau Server."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ruamel.yaml>=0.19.1",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.5",
+    "snowflake-connector-python>=4.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
